@@ -25,6 +25,11 @@ const Form = () => {
     setCities([...cities, { dateArrived: "", cityName: "" }]);
   };
 
+  const removeCity = (index) => {
+    const newCities = cities.filter((_, cityIndex) => cityIndex !== index);
+    setCities(newCities);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
@@ -33,11 +38,11 @@ const Form = () => {
     };
 
     console.log(JSON.stringify(formData, null, 2));
-    // TODO: Here, you would typically send 'formData' to your server or handle it as needed
+    // TODO: Here, you would typically send 'formData' to server
   };
 
   return (
-    <div className=" my-10 p-8 bg-white border border-gray-200 rounded-3xl shadow-lg">
+    <div className="max-w-6xl mx-auto my-10 p-8 bg-white border border-gray-200 rounded shadow-lg">
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           {/* Personal Information Section */}
@@ -104,12 +109,39 @@ const Form = () => {
             </h2>
             {cities.map((city, index) => (
               <div key={index} className="mb-4">
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                  htmlFor={`dateArrived-${index}`}
-                >
-                  Date Arrived
-                </label>
+                <div className="flex justify-between items-baseline">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor={`cityName-${index}`}
+                  >
+                    City Name
+                  </label>
+                  <p
+                    className="text-sm text-red-800 cursor-pointer active:text-red-600"
+                    onClick={() => removeCity(index)}
+                  >
+                    remove
+                  </p>
+                </div>
+
+                <input
+                  className="w-full p-3 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  id={`cityName-${index}`}
+                  name="cityName"
+                  value={city.cityName}
+                  onChange={(e) => handleCityChange(index, e)}
+                  placeholder="Paris"
+                  required
+                />
+                <div className="flex justify-between items-baseline">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor={`dateArrived-${index}`}
+                  >
+                    Date Arrived
+                  </label>
+                </div>
+
                 <input
                   className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200 mb-2"
                   type="date"
@@ -119,27 +151,12 @@ const Form = () => {
                   onChange={(e) => handleCityChange(index, e)}
                   required
                 />
-                <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
-                  htmlFor={`cityName-${index}`}
-                >
-                  City Name
-                </label>
-                <input
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  id={`cityName-${index}`}
-                  name="cityName"
-                  value={city.cityName}
-                  onChange={(e) => handleCityChange(index, e)}
-                  placeholder="Paris"
-                  required
-                />
               </div>
             ))}
             <button
               type="button"
               onClick={addCity}
-              className="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className=" bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Add More
             </button>
@@ -148,7 +165,7 @@ const Form = () => {
         <div className="flex justify-center mt-6">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+            className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
           >
             Submit
           </button>
