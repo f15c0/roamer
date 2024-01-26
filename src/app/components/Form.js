@@ -4,13 +4,17 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const Form = () => {
-  const [personalInfo, setPersonalInfo] = useState({
+  const initialInfo = {
     firstName: "",
     lastName: "",
     dateOfBirth: "",
-  });
+  };
 
-  const [cities, setCities] = useState([{ dateArrived: "", cityName: "" }]);
+  const initialCities = [{ dateArrived: "", cityName: "" }];
+
+  const [personalInfo, setPersonalInfo] = useState(initialInfo);
+
+  const [cities, setCities] = useState(initialCities);
 
   const handlePersonalInfoChange = (e) => {
     setPersonalInfo({ ...personalInfo, [e.target.name]: e.target.value });
@@ -40,6 +44,10 @@ const Form = () => {
 
     console.log(JSON.stringify(formData, null, 2));
     // TODO: Here, you would typically send 'formData' to server
+
+    //Clear Form
+    setPersonalInfo(initialInfo);
+    setCities(initialCities);
   };
 
   return (
@@ -109,7 +117,7 @@ const Form = () => {
               Cities Travelled
             </h2>
             {cities.map((city, index) => (
-              <div key={index} className="mb-4">
+              <div key={index} className="mb-2">
                 <div className="flex justify-between items-center">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
@@ -159,7 +167,7 @@ const Form = () => {
             <button
               type="button"
               onClick={addCity}
-              className=" bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className=" bg-blue-500 text-xs hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Add More
             </button>
