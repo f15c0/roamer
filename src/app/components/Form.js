@@ -167,7 +167,7 @@ const Form = () => {
             <button
               type="button"
               onClick={addCity}
-              className=" bg-blue-500 text-xs hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className=" bg-slate-500 text-xs hover:bg-slate-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Add More
             </button>
