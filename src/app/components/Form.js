@@ -53,7 +53,7 @@ const Form = () => {
   return (
     <div className="max-w-6xl mx-auto my-10 p-8 bg-white border border-gray-200 rounded-lg shadow-xl">
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
           {/* Personal Information Section */}
           <div className="mb-6">
             <h1 className="text-xl font-bold text-gray-700 mb-6">
@@ -113,7 +113,7 @@ const Form = () => {
 
           {/* Cities Travelled Section */}
           <div>
-            <h2 className="text-xl font-bold text-gray-700 mb-4">
+            <h2 className="text-xl font-bold text-gray-700 mb-6">
               Cities Travelled
             </h2>
             {cities.map((city, index) => (
