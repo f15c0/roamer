@@ -10,24 +10,98 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 214, 0, 255;
+    --background-start-rgb:255, 255, 255;
+    --background-end-rgb: 255, 255, 155;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.personal-info,
+.cities-travelled {
+  width: 100%;
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+
+  .personal-info,
+  .cities-travelled {
+    width: 50%;
+  }
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #0056b3;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #004494;
+}
+
+.add-city-btn {
+  background-color: #28a745;
+}
+
+.add-city-btn:hover {
+  background-color: #218838;
+}
+
+.submit-section {
+  text-align: center;
+  margin-top: 20px;
 }
