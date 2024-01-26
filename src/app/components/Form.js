@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Form = () => {
   const [personalInfo, setPersonalInfo] = useState({
@@ -42,7 +43,7 @@ const Form = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto my-10 p-8 bg-white border border-gray-200 rounded shadow-lg">
+    <div className="max-w-6xl mx-auto my-10 p-8 bg-white border border-gray-200 rounded-lg shadow-xl">
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           {/* Personal Information Section */}
@@ -109,19 +110,21 @@ const Form = () => {
             </h2>
             {cities.map((city, index) => (
               <div key={index} className="mb-4">
-                <div className="flex justify-between items-baseline">
+                <div className="flex justify-between items-center">
                   <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor={`cityName-${index}`}
                   >
                     City Name
                   </label>
-                  <p
+                  <Image
+                    width="16"
+                    height="16"
                     className="text-sm text-red-800 cursor-pointer active:text-red-600"
+                    src="https://img.icons8.com/small/16/5E1205/trash--v1.png"
+                    alt="trash--v1"
                     onClick={() => removeCity(index)}
-                  >
-                    remove
-                  </p>
+                  />
                 </div>
 
                 <input
