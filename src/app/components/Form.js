@@ -51,7 +51,7 @@ const Form = () => {
   };
 
   return (
-    <div className="w-8/12 mx-auto my-10 p-8 bg-white border border-gray-200 rounded-lg shadow-xl px-6">
+    <div className="md:w-8/12 mx-auto my-10 p-8 bg-white border border-gray-200 rounded-lg shadow-xl px-6">
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-28 px-10 pt-4">
           {/* Personal Information Section */}
