@@ -67,7 +67,7 @@ const Form = () => {
                 First Name
               </label>
               <input
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+                className="w-full p-3 border  border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200"
                 id="firstName"
                 name="firstName"
                 value={personalInfo.firstName}
@@ -84,7 +84,7 @@ const Form = () => {
                 Last Name
               </label>
               <input
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+                className="w-full p-3 rounded-lg  border border-gray-300  focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 id="lastName"
                 name="lastName"
                 value={personalInfo.lastName}
@@ -101,7 +101,7 @@ const Form = () => {
                 Date of Birth
               </label>
               <input
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200"
                 type="date"
                 id="dateOfBirth"
                 name="dateOfBirth"
@@ -136,7 +136,7 @@ const Form = () => {
                 </div>
 
                 <input
-                  className="w-full p-3 mb-6 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  className="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-200"
                   id={`cityName-${index}`}
                   name="cityName"
                   value={city.cityName}
@@ -154,13 +154,14 @@ const Form = () => {
                 </div>
 
                 <input
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-200 mb-2"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-200 mb-2"
                   type="date"
                   id={`dateArrived-${index}`}
                   name="dateArrived"
                   value={city.dateArrived}
                   onChange={(e) => handleCityChange(index, e)}
                   required
+                  placeholder="Date Arrived"
                 />
               </div>
             ))}
