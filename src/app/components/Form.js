@@ -124,7 +124,7 @@ const Form = () => {
                 Cities Travelled
               </h1>
               <p className="text-xs md:text-sm text-gray-400">
-                Please enter your cities you've toured
+                Please enter your cities you&apos;ve toured
               </p>
             </div>
             {cities.map((city, index) => (
