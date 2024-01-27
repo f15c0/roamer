@@ -51,14 +51,20 @@ const Form = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto my-10 p-8 bg-white border border-gray-200 rounded-lg shadow-xl">
+    <div className="w-8/12 mx-auto my-10 p-8 bg-white border border-gray-200 rounded-lg shadow-xl px-6">
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-28 px-10 pt-4">
           {/* Personal Information Section */}
           <div className="mb-6">
-            <h1 className="text-xl font-bold text-gray-700 mb-6">
-              Personal Information
-            </h1>
+            <div className="mb-6">
+              <h1 className="text-xl font-bold text-gray-700 ">
+                Personal Information
+              </h1>
+              <p className="text-xs md:text-sm text-gray-400">
+                Please fill in your personal information
+              </p>
+            </div>
+
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -113,9 +119,14 @@ const Form = () => {
 
           {/* Cities Travelled Section */}
           <div>
-            <h2 className="text-xl font-bold text-gray-700 mb-6">
-              Cities Travelled
-            </h2>
+            <div className="mb-6">
+              <h1 className="text-xl font-bold text-slate-700 ">
+                Cities Travelled
+              </h1>
+              <p className="text-xs md:text-sm text-gray-400">
+                Please enter your cities you've toured
+              </p>
+            </div>
             {cities.map((city, index) => (
               <div key={index} className="mb-2">
                 <div className="flex justify-between items-center">
