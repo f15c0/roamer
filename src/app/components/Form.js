@@ -137,10 +137,10 @@ const Form = () => {
                     City Name
                   </label>
                   <Image
-                    width="16"
-                    height="16"
-                    className="text-sm text-red-800 cursor-pointer active:text-red-600"
-                    src="https://img.icons8.com/small/16/5E1205/trash--v1.png"
+                    width="28"
+                    height="28"
+                    className="text-sm text-red-800 hover:scale-110 duration-100 cursor-pointer active:text-red-600"
+                    src="https://img.icons8.com/small/48/5E1205/trash--v1.png"
                     alt="trash--v1"
                     onClick={() => removeCity(index)}
                   />
