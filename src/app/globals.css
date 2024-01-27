@@ -17,7 +17,12 @@
 }
 
 body {
-
+margin: 0;
+  padding: 0;
+  /* background: linear-gradient(to right, #fafeff, #ffffff); */
+  /* Example gradient */
+  /* color: #333; */
+  /* Adjust text color for readability */
 }
 
 @layer utilities {
